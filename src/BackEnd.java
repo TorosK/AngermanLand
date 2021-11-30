@@ -19,7 +19,16 @@ public class BackEnd {
     //Ska returnera en sträng: "And the Winner is " samt namnet på den spelare som har högst poäng
     public String getWinner(){
         //TODO
-        return "Not implemented";
+        if (getP1Score() > getP2Score()) {
+            return "And the Winner is " + getPlayer1() + " with score: " + getP1Score();
+        }
+        else if (getP2Score() > getP1Score()) {
+            return "And the Winner is " + getPlayer2()  + " with score: " + getP2Score();
+        }
+        else {
+            return "Draw!";
+        }
+
     }
 
     // Ska returnera namnet på den spelaren i tur utifrån värdet på currentplayer
@@ -85,6 +94,17 @@ public class BackEnd {
     public String getPlayer2() {
         return player2;
     }
+
+    // Created for Test Purposes
+    public int getP1Score() {
+        return p1Score;
+    }
+
+    // Created for Test Purposes
+    public int getP2Score() {
+        return p2Score;
+    }
+
     public int getCurrentPlayer(){
         return this.currentPlayer;
     }
