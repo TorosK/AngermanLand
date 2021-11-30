@@ -18,11 +18,11 @@ public class BackEnd {
 
     //Ska returnera en sträng: "And the Winner is " samt namnet på den spelare som har högst poäng
     public String getWinner(){
-        //TODO
-        if (getP1Score() > getP2Score()) {
+        //DONE!
+        if (getP1Score() >= 100 && getP1Score() > getP2Score() && getP2Score() < 100) {
             return "And the Winner is " + getPlayer1() + " with score: " + getP1Score();
         }
-        else if (getP2Score() > getP1Score()) {
+        else if (getP2Score() >= 100 && getP2Score() > getP1Score() && getP1Score() < 100) {
             return "And the Winner is " + getPlayer2()  + " with score: " + getP2Score();
         }
         else {
@@ -104,6 +104,28 @@ public class BackEnd {
     public int getP2Score() {
         return p2Score;
     }
+
+    // ********************************** Testing purposes ***********************************
+    // Setters created for testing and bugfix
+
+    public void setP1ScoreTest(int p1Score) {
+        this.p1Score = p1Score;
+    }
+
+    public void setP2ScoreTest(int p2Score) {
+        this.p2Score = p2Score;
+    }
+
+    public void setPlayer1Test(String player1) {
+        this.player1 = player1;
+    }
+
+    public void setPlayer2Test(String player2) {
+        this.player2 = player2;
+    }
+
+    // **************************************************************************************
+
 
     public int getCurrentPlayer(){
         return this.currentPlayer;
