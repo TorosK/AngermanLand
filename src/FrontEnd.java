@@ -131,7 +131,7 @@ public class FrontEnd extends JFrame {
     }
 
     public void BackEndStart() {
-        this.BackEnd.randomStarter(BackEnd.getCurrentPlayer());
+        this.BackEnd.randomStarter();
         this.throwDice.setText("Press here: " + BackEnd.currentPlayerName());
         this.player1Name.setText(BackEnd.getPlayer1());
         this.player2Name.setText(BackEnd.getPlayer2());
@@ -168,7 +168,7 @@ public class FrontEnd extends JFrame {
     }
 
     public void activateGameOver() {
-        this.winner.setText(BackEnd.getWinner());
+        this.winner.setText("");
         this.remove(panel1);
         this.add(GameOverPanel);
         this.repaint();

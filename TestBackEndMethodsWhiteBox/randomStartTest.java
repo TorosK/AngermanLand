@@ -12,7 +12,7 @@ class randomStartTest {
         //Test1 - If GREEN the random number is either 1 or 2
         BackEnd backend = new BackEnd();
         boolean oneOrTwo = false;
-        backend.randomStarter(backend.getCurrentPlayer());
+        backend.randomStarter();
 
         int result = backend.randomStarterForTestOnly(backend.getCurrentPlayer());
         if (result == 1 || result == 2) {

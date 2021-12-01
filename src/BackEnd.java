@@ -42,7 +42,7 @@ public class BackEnd {
             return getPlayer2();
         }
         else{
-            return"currentPlayerName Error!";
+            return "currentPlayerName Error!";
         }
     }
 
@@ -51,16 +51,16 @@ public class BackEnd {
         //TODO
     }
 
-
+    // ******************************************** Test version ***********************************************
     //This is a test version of "randomStarter" method that also returns this.currentPlayer
     public int randomStarterForTestOnly(int currentPlayer){
-        // DONE!
         this.currentPlayer = currentPlayer;
         Random random = new Random();
         int result = (int) (( Math.random() * 2) + 1); // randomly assigns either 1 or 2 to result
         this.currentPlayer = result;
         return this.currentPlayer;
     }
+    // *********************************************************************************************************
 
 
 
@@ -72,20 +72,65 @@ public class BackEnd {
     }
     //Returnerar en sträng med spelare2:s namn följt av "Score: " samt spelare2:s poäng
     public String player2Score(){
-        //TODO
-        return "Not implemented";
+        //Done!
+        return "Player " + getPlayer2() + " has score: " + getP2Score();
     }
 
     //Ger this.Dice ett värde mellan 1 och 20, samt ökar this.roundCounter med 1;
     public void throwDice(){
         //TODO
     }
-    // Lägger till värdet på this.dice till den aktuelle spelaren poäng
-    // Nollställer därefter this.dice och this.roundCounter
-    //Kollar sedan om någon av spelarna har nått 100 poäng och om så är fallet sätts gameOver till true;
-    public void addScore(){
-        //TODO
+
+    // Testversion of thowDice that should be deleted before product launch
+    public int[] throwDiceTest(){
+        //DONE!
+        this.dice = getDice();
+        this.dice = (int) (( Math.random() * 20) + 1);
+        this.roundCounter = getRoundCounter();
+        this.roundCounter++;
+        int[] diceAndRoundCounter = {this.dice, this.roundCounter};
+
+        return diceAndRoundCounter;
     }
+
+
+    // Lägger till värdet på this.dice till den aktuelle spelarens poäng
+    // Nollställer därefter this.dice och this.roundCounter
+    // Kollar sedan om någon av spelarna har nått 100 poäng och om så är fallet sätts gameOver till true
+    public void addScore(){
+        //DONE!
+        this.dice = getDice();
+        this.roundCounter = getRoundCounter();
+
+        if (getCurrentPlayer() == 1){
+            setP1Score(getP1Score() + this.dice);
+        }
+        else if (getCurrentPlayer() == 2){
+            setP2Score(getP2Score() + this.dice);
+        }
+
+        this.dice = 0;
+        this.roundCounter = 0;
+        getWinner();
+    }
+
+    public void addScoreTest(int dice, int roundCounter){ // Duplicated method added for testing purposes
+        //DONE!
+        this.dice = dice;
+        this.roundCounter = roundCounter;
+
+        if (getCurrentPlayer() == 1){
+            setP1Score(getP1Score() + this.dice);
+        }
+        else if (getCurrentPlayer() == 2){
+            setP2Score(getP2Score() + this.dice);
+        }
+
+        this.dice = 0;
+        this.roundCounter = 0;
+        getWinner();
+    }
+
 
 //Inget ska behöva ändras eller testas koden härunder
 
@@ -116,26 +161,25 @@ public class BackEnd {
         return player2;
     }
 
-    // Created for Test Purposes
+
     public int getP1Score() {
         return p1Score;
     }
 
-    // Created for Test Purposes
     public int getP2Score() {
         return p2Score;
     }
 
-    // ********************************** Testing purposes ***********************************
-    // Setters created for testing and bugfix
-
-    public void setP1ScoreTest(int p1Score) {
+    public void setP1Score(int p1Score) {
         this.p1Score = p1Score;
     }
 
-    public void setP2ScoreTest(int p2Score) {
+    public void setP2Score(int p2Score) {
         this.p2Score = p2Score;
     }
+
+    // ********************************** Testing purposes ***********************************
+    // Setters created for testing and bugfix
 
     public void setPlayer1Test(String player1) {
         this.player1 = player1;
@@ -149,8 +193,27 @@ public class BackEnd {
         this.currentPlayer = currentPlayer;
     }
 
-    // **************************************************************************************
+    public void setPlayer1(String player1) {
+        this.player1 = player1;
+    }
 
+    public void setPlayer2(String player2) {
+        this.player2 = player2;
+    }
+
+    public void setRoundCounterTest(int roundCounter) {
+        this.roundCounter = roundCounter;
+    }
+
+    public void setDiceTest(int dice) {
+        this.dice = dice;
+    }
+
+    // ***************************************************************************************
+
+    public int getRoundCounter() {
+        return roundCounter;
+    }
 
     public int getCurrentPlayer(){
         return this.currentPlayer;
