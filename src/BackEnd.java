@@ -55,7 +55,6 @@ public class BackEnd {
     //This is a test version of "randomStarter" method that also returns this.currentPlayer
     public int randomStarterForTestOnly(int currentPlayer){
         this.currentPlayer = currentPlayer;
-        Random random = new Random();
         int result = (int) (( Math.random() * 2) + 1); // randomly assigns either 1 or 2 to result
         this.currentPlayer = result;
         return this.currentPlayer;
@@ -66,8 +65,8 @@ public class BackEnd {
 
     //Returnerar en sträng med spelare1:s namn följt av "Score: " samt spelare1:s poäng
     public String player1Score(){
-        //TODO
-        return "Not implemented";
+        //Done!
+        return "Player " + getPlayer1() + " has score: " + getP1Score();
 
     }
     //Returnerar en sträng med spelare2:s namn följt av "Score: " samt spelare2:s poäng
@@ -78,7 +77,11 @@ public class BackEnd {
 
     //Ger this.Dice ett värde mellan 1 och 20, samt ökar this.roundCounter med 1;
     public void throwDice(){
-        //TODO
+        //DONE!
+        this.dice = getDice();
+        this.dice = (int) (( Math.random() * 20) + 1);
+        this.roundCounter = getRoundCounter();
+        this.roundCounter++;
     }
 
     // Testversion of thowDice that should be deleted before product launch
