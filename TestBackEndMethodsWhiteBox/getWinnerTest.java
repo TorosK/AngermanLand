@@ -1,6 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 
-class BackEndGetWinnerTest {
+class getWinnerTest {
 
     @org.junit.jupiter.api.Test
     void getP1Winner() {  // Method checks if Player one successfully wins with a higher end score
@@ -23,6 +23,7 @@ class BackEndGetWinnerTest {
         assertEquals("And the Winner is " + backEndTest.getPlayer2() +
                 " with score: " + 100, result00);
     }
+
 
     @org.junit.jupiter.api.Test
     void getDraw() {  // Method checks if nobody successfully wins if both scores are too low
@@ -50,12 +51,4 @@ class BackEndGetWinnerTest {
         String result01 = backEndTest.getWinner();
         assertEquals("Draw!", result01);
     }
-
-
-
-
-
-
-
-
 }

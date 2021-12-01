@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.Random;
 
 public class BackEnd {
     private String player1; //Namnet på den ena spelaren
@@ -33,15 +34,35 @@ public class BackEnd {
 
     // Ska returnera namnet på den spelaren i tur utifrån värdet på currentplayer
     public String currentPlayerName(){
-        //TODO
-        return "Not implemented";
-
+        //Done
+        if (getCurrentPlayer() == 1){
+            return getPlayer1();
+        }
+        else if (getCurrentPlayer() == 2){
+            return getPlayer2();
+        }
+        else{
+            return"currentPlayerName Error!";
+        }
     }
 
     //Sätter this.currentPlayer till 1 eller 2 baserat på slumpen.
     public void randomStarter(){
         //TODO
     }
+
+
+    //This is a test version of "randomStarter" method that also returns this.currentPlayer
+    public int randomStarterForTestOnly(int currentPlayer){
+        // DONE!
+        this.currentPlayer = currentPlayer;
+        Random random = new Random();
+        int result = (int) (( Math.random() * 2) + 1); // randomly assigns either 1 or 2 to result
+        this.currentPlayer = result;
+        return this.currentPlayer;
+    }
+
+
 
     //Returnerar en sträng med spelare1:s namn följt av "Score: " samt spelare1:s poäng
     public String player1Score(){
@@ -122,6 +143,10 @@ public class BackEnd {
 
     public void setPlayer2Test(String player2) {
         this.player2 = player2;
+    }
+
+    public void setCurrentPlayer(int currentPlayer) {
+        this.currentPlayer = currentPlayer;
     }
 
     // **************************************************************************************

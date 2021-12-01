@@ -131,7 +131,7 @@ public class FrontEnd extends JFrame {
     }
 
     public void BackEndStart() {
-        this.BackEnd.randomStarter();
+        this.BackEnd.randomStarter(BackEnd.getCurrentPlayer());
         this.throwDice.setText("Press here: " + BackEnd.currentPlayerName());
         this.player1Name.setText(BackEnd.getPlayer1());
         this.player2Name.setText(BackEnd.getPlayer2());
