@@ -1,3 +1,12 @@
+/*
+Ångermanland
+
+        Toros Kutlu
+        Johanna Örnbrand
+        Emily Arnelid
+        Julius Thomsen
+*/
+
 import javax.swing.*;
 import java.util.Random;
 
@@ -48,7 +57,11 @@ public class BackEnd {
 
     //Sätter this.currentPlayer till 1 eller 2 baserat på slumpen.
     public void randomStarter(){
-        //TODO
+        // DONE!
+        this.currentPlayer = getCurrentPlayer();
+        Random random = new Random();
+        int result = (int) (( Math.random() * 2) + 1);
+        this.currentPlayer = result;
     }
 
     // ******************************************** Test version ***********************************************
