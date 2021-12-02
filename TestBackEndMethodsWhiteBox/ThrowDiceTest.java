@@ -15,10 +15,7 @@ class ThrowDiceTest {
         int diceResult = result[0];
 
         boolean numberIsWithinOneAndTwenty = false;
-        if (diceResult > 0 && diceResult < 21) {
-            numberIsWithinOneAndTwenty = true;
-        }
-        assertTrue(numberIsWithinOneAndTwenty);
+        assertTrue(diceResult > 0 && diceResult < 21);
     }
 
     @Test

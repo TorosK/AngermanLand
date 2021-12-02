@@ -22,7 +22,7 @@ class randomStartTest {
     }
 
     @Test
-    void randomizerTest() {
+    void randomizerTest() { // Checks if arrayList contains apropriate numbers
         ArrayList<Integer> randomArrayList = new ArrayList<>();
         int result;
         for (int i = 0; i < 25; i++) {
