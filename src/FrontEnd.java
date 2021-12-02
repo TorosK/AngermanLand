@@ -168,7 +168,7 @@ public class FrontEnd extends JFrame {
     }
 
     public void activateGameOver() {
-        this.winner.setText(BackEnd.getWinner());
+        this.winner.setText("");
         this.remove(panel1);
         this.add(GameOverPanel);
         this.repaint();
